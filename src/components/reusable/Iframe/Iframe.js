@@ -2,17 +2,19 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import Iframe from 'react-iframe'
 
+import './Iframe.css'
+
 
 
 class Iframe2 extends React.Component {
 	render() {
 		return (
 			<Iframe {...{
+		        className: "iframe",
 				url: this.props.url,
-		        width: "600px",
-		        height: "600px",
+		        width: "620px",
+		        height: "620px",
 		        id: "myId",
-		        className: "myClassname",
 		        display: "initial",
 		        position: "relative",
 			}}/>

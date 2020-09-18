@@ -61,7 +61,7 @@ function App() {
   return (
     <div className="App">
       <div className="nav-bar">
-        <button onClick={handleToggleNav}>
+        <button className="nav-button" onClick={handleToggleNav}>
           <FaAlignRight/>
         </button>
         <ul className={isNavBarOpen ? 'nav-links show-nav': 'nav-links'}>
@@ -92,6 +92,7 @@ function App() {
         <br/>
         <button
           type='button'
+          className='click-button'
           onClick={handleButtonClick}
         >
           fetch stock data
