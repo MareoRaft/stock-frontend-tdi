@@ -5,8 +5,14 @@ import Iframe from './components/reusable/Iframe'
 
 function App() {
   const [tickerInput, setTickerInput] = useState('VZ')
+  const [url, setUrl] = useState(process.env['REACT_APP_BACKEND_URL'])
   const handleChangeTickerInput = (event) => {
     setTickerInput(event.target.value)
+  }
+  const handleButtonClick = (event) => {
+    const base_url = process.env['REACT_APP_BACKEND_URL']
+    const new_url = `${base_url}?ticker=${tickerInput}`
+    setUrl(new_url)
   }
   return (
     <div className="App">
@@ -17,14 +23,19 @@ function App() {
           value={tickerInput}
           onChange={handleChangeTickerInput}
         />
-        tickervalue preview:
-        {tickerInput}
+        <button
+          type='button'
+          onClick={handleButtonClick}
+        >
+          fetch stock data
+        </button>
 
 
 
 
-        <Iframe>i am the iframe component</Iframe>
-        done char.
+        <Iframe {...{
+          url: url,
+        }}/>
       </header>
     </div>
   );
