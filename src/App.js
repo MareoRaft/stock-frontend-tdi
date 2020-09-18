@@ -1,6 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
+import Char from './components/one-time/Char'
+import Iframe from './components/reusable/Iframe'
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
         >
           Learn React.  TDI.
         </a>
+        <Iframe>i am the iframe component</Iframe>
+        done char.
       </header>
     </div>
   );
