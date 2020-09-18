@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {FaAlignRight} from 'react-icons/fa'
 import _ from 'lodash'
 
 import logo from './logo.svg'
@@ -27,9 +28,15 @@ const renderCheckboxes = (statsToDisplay, handleCheckboxClick) => {
 
 
 function App() {
+  // set states
+  const [isNavBarOpen, setIsNavBarOpen] = useState(true)
   const [tickerInput, setTickerInput] = useState('VZ')
   const [url, setUrl] = useState(process.env['REACT_APP_BACKEND_URL'])
   const [statsToDisplay, setStatsToDisplay] = useState(new Set())
+  // change handlers
+  const handleToggleNav = () => {
+    setIsNavBarOpen(!isNavBarOpen)
+  }
   const handleChangeTickerInput = (event) => {
     setTickerInput(event.target.value)
   }
@@ -53,6 +60,26 @@ function App() {
   }
   return (
     <div className="App">
+      <div className="nav-bar">
+        <button onClick={handleToggleNav}>
+          <FaAlignRight/>
+        </button>
+        <ul className={isNavBarOpen ? 'nav-links show-nav': 'nav-links'}>
+          <li href='#'>Stock Ticker App</li>
+          <li
+            href='#'
+          >
+            <a
+              className="App-link"
+              href="https://www.thedataincubator.com/12day.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              12-day
+            </a>
+          </li>
+        </ul>
+      </div>
       <header className="App-header">
         Ticker symbol:
         <input
