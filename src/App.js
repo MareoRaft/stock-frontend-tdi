@@ -66,9 +66,17 @@ function App() {
         </button>
         <ul className={isNavBarOpen ? 'nav-links show-nav': 'nav-links'}>
           <li href='#'>Stock Ticker App</li>
-          <li
-            href='#'
-          >
+          <li>
+            <a
+              className="App-link"
+              href="https://github.com/MareoRaft/stock-backend-tdi"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GitHub
+            </a>
+          </li>
+          <li>
             <a
               className="App-link"
               href="https://www.thedataincubator.com/12day.html"
